@@ -1,20 +1,26 @@
-export default function getSuperSeriesWinner(scores) {
-let iteraion = 0;
-let ussrscore, canadascore;
-while (iteraion < 8) {
-    ussrscore = scores[1][iteraion] + ussrscore;
-    canadascore = scores[2][iteraion] + canadascore;
-    iteraion = iteraion + 1;
-}
-if (ussrscore > canadascore) {
-    return "ussr";
-}
-else if (canadascore > ussrscore) {
-    return "canadascore";
-}
-else {
-    return "null";
+// BEGIN
+const getSuperSeriesWinner = (scores) => {
+
+    let ussr = 0;
+    let canada = 0;
+
+    for (let i of scores) {
+        if (i[0] > i[1]) {
+            canada += 1;
+        } else if (i[0] < i[1]) {
+            ussr += 1;
+        }
+    }
+
+    if (canada > ussr) {
+        return 'canada';
+    } else if (canada < ussr) {
+        return 'ussr';
+    } else {
+        return null;
+    }
 }
 
-}
 
+export default getSuperSeriesWinner;
+// END

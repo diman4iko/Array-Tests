@@ -1,8 +1,13 @@
-const flatten = (arr) => arr.reduce((acc, item) => {
-    if (Array.isArray(item)) {
-      return [...acc, ...flatten(item)];
-    }
-    return [...acc, item];
-  }, []);
-  
-  export default flatten;
+// BEGIN
+export const flatten = (arr) => {
+  let resarr = [];
+  for (let element of arr) {
+      if (typeof(element) == 'object') {
+          resarr.push(...element)
+      } else {
+          resarr.push(element)
+      }
+  }
+  return resarr
+}
+// END
