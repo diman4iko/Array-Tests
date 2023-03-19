@@ -1,9 +1,9 @@
-// BEGIN
-export function issett(arr, number, defaultnum) {
-    if (arr.length < (number - 1)) {
-        return arr[(number) - 1];
-    }
+export const get = (arr, index, normal = null) => {
+    
+    if (index < arr.length && index >= 0) {
+        return arr[index];
+    } 
     else {
-        return defaultnum;
+        return normal;
     }
 }

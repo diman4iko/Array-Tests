@@ -1,7 +1,13 @@
 
-export function swap(Arr) {
-let element;
-element = Arr[(Arr.length - 1)];
-arr[(Arr.length - 1)] = Arr[0];
-Arr[0] = element;
-}
+export function swap(arr) {
+    if (arr.length < 2) {
+        return arr;
+    }
+    else { let element;
+element = arr[(arr.length - 1)];
+arr[(arr.length - 1)] = arr[0];
+arr[0] = element;
+return arr;
+} }
+
+

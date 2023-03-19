@@ -1,5 +1,5 @@
 
-export function getWeekends(size) {
+ export function getWeekends(size) {
   let ShortData = ['sat', 'sun'];
   let LongData = ['saturday', 'sunday'];
   if (size == "short") {

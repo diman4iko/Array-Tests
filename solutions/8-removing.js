@@ -1,6 +1,15 @@
+// BEGIN
 const getSameParity = (arr) => {
-    const firstElemParity = Math.abs(arr[0] % 2);
-    return arr.filter((num) => Math.abs(num % 2) === firstElemParity);
-  };
-  
-  export default getSameParity;
+  if (arr.length == 0) {
+      return [];
+  }
+  let resultarr = [];
+  for (let i of arr) {
+      if (Math.abs(i % 2) == Math.abs(arr[0] % 2)) {
+          resultarr.push(i)
+      }
+  }
+  return resultarr
+}
+export default getSameParity;
+// END

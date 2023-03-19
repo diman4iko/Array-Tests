@@ -1,13 +1,14 @@
-export default function calculateAverage(arr1) {
-    let iteration = 0;
-    let summ = 0;
-    let average;
-
-    while (arr1.length < iteration) {
-        summ = arr1[iteration] + summ;
-        iteration = iteration + 1;
+const calculateAverage = (arr) => {
+    if (arr.length == 0) {
+        return null;
     }
-    average = summ / (arr1.length - 1);
-    return average;
+    let s = 0;
+    for (let i of arr) {
+        s += i;
+    }
+    return s / arr.length;
 }
 
+
+export default calculateAverage;
+// END

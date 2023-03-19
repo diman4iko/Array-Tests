@@ -1,12 +1,16 @@
- export default function getTotalAmount(curentBalance, wallet) {
-    let countWallet = curentBalance.length;
-    let iteration = 0
-   let summ;
-    while (iteration < countWallet) {
-    if (curentBalance[iteration].slice(4) == "wallet") {
-        summ = curentBalance[iteration].slice(-3).number + summ;
+// BEGIN
+const getTotalAmount = (arr, currency) => {
+    let s = 0;
+
+    for (let i of arr) {
+        let a = i.split(' ');
+        let wallet = a[0]
+        let value = Number(a[1])
+        if (wallet == currency) {
+            s += value;
+        }
     }
-    iteration = iteration + 1;
-    }
-    return summ;
+    return s;
 }
+export default getTotalAmount;
+// END
